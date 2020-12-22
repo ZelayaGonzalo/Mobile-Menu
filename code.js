@@ -1,23 +1,21 @@
 // Detect Device
-document.addEventListener("DOMContentLoaded", initDetect)
-function initDetect(){
-  window.addEventListener("resize", detectDevice)
-  detectDevice()
-}
-
-detectDevice = () => {
-  let detectDeviceObj = {
-    device: !!navigator.maxTouchPoints ? 'mobile' : 'computer',
-    orientation: !navigator.maxTouchPoints ? 'desktop' : !window.screen.orientation.angle ? 'portrait' : 'landscape'
+function initDetect() {
+  function detectDevice() {
+    const detectDeviceObj = {
+      device: navigator.maxTouchPoints ? 'mobile' : 'computer',
+      // eslint-disable-next-line no-nested-ternary
+      orientation: !navigator.maxTouchPoints ? 'desktop' : !window.screen.orientation.angle ? 'portrait' : 'landscape',
+    };
+    return detectDeviceObj;
   }
 
-  updateText(detectDeviceObj)
+  window.addEventListener('resize', detectDevice);
+  detectDevice();
 }
-
-updateText = (detectDeviceObj) => {
-  let h1Text = document.querySelector(".h1_text")
-  let h2Text = document.querySelector(".h2_text")
-
-  h1Text.innerHTML = `Device: ${detectDeviceObj.device}`
-  h2Text.innerHTML = `Orientation: ${detectDeviceObj.orientation}`
+document.addEventListener('DOMContentLoaded', initDetect);
+//  Functions mobile
+function openMenu() {
+  const button = document.getElementById('sidebar');
+  button.classList.toggle('open');
 }
+document.getElementById('mobileNav').addEventListener('click', openMenu);

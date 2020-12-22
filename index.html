@@ -2,17 +2,15 @@
 <html>
   <head>
     <title>Mobile Menu</title>
-    <script src='detectDevice.js'></script>
+    
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <div class='root'>
-        <div class="content">
-        </div>
-        <nav class="mobileNav">
-            <div>button</div>
+        <nav class="mobileNav" id="mobileNav">
+            <img id="hamburgerIcon" src="Images/Hamburger_icon.png" alt="Open menu">
         </nav>
-        <ul class="sideBar">
+        <ul class="sideBar" id="sidebar">
             <li class="sidebarButtons">Menu 1</li>
             <li class="sidebarButtons">Menu 2</li>
             <li class="sidebarButtons">Menu 3</li>
@@ -25,5 +23,6 @@
         </ul>
       
     </div>
+    <script src='code.js'></script>
   </body>
 </html>
