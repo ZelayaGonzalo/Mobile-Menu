@@ -27,7 +27,7 @@ body{
 .sideBar{
     opacity: 0;
     margin-top: 8vh;
-    position: fixed;
+    position: absolute;
     height: 92vh;
     width: 50vw;
     background-color: #2B2D42;
